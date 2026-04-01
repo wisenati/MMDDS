@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mango Disease Detection - Premium Scientific Design System */
+/* White clarity + Red precision color palette */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotto:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Core whites - clarity and precision */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
+    
+    /* Card surfaces - subtle depth */
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 8%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+    
+    /* Primary - Deep scientific red */
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Warm muted tones */
+    --secondary: 30 15% 96%;
+    --secondary-foreground: 0 0% 15%;
+    
+    /* Muted - Soft backgrounds */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    /* Accent - Subtle warmth */
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 10%;
+    
+    /* Alert states */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Success - Healthy green */
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning - Caution amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
+    
+    /* Borders and inputs */
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
+    --ring: 0 72% 51%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom disease severity colors */
+    --severity-low: 142 70% 45%;
+    --severity-medium: 38 92% 50%;
+    --severity-high: 0 84% 60%;
+    --severity-critical: 0 72% 40%;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 25%;
+    --sidebar-primary: 0 72% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 94%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 72% 51%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+    
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 0 72% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
+    
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+    
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 95%;
+    
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 70% 40%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 45%;
+    --warning-foreground: 0 0% 10%;
+    
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 72% 55%;
+    
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 72% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 0 72% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  /* Subtle glass effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+  }
+  
+  /* Premium shadow system */
+  .shadow-soft {
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05),
+                0 4px 16px -4px rgba(0, 0, 0, 0.08);
+  }
+  
+  .shadow-elevated {
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.08),
+                0 8px 32px -8px rgba(0, 0, 0, 0.12);
+  }
+  
+  .shadow-float {
+    box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.1),
+                0 16px 48px -8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Red glow for alerts */
+  .glow-alert {
+    box-shadow: 0 0 20px -5px hsl(0 72% 51% / 0.3),
+                0 0 40px -10px hsl(0 72% 51% / 0.2);
+  }
+  
+  /* Pulse animation for disease alerts */
+  .pulse-alert {
+    animation: pulse-alert 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-alert {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(0 72% 51% / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px hsl(0 72% 51% / 0);
+    }
+  }
+  
+  /* Smooth fade in */
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Slide up animation */
+  .slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Scale in animation */
+  .scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-destructive bg-clip-text text-transparent;
+  }
+  
+  /* Upload zone styles */
+  .upload-zone {
+    @apply relative overflow-hidden transition-all duration-300 ease-out;
+  }
+  
+  .upload-zone:hover {
+    @apply border-primary/50;
+  }
+  
+  .upload-zone.dragover {
+    @apply border-primary bg-primary/5 scale-[1.02];
+  }
+}
